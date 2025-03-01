@@ -1,0 +1,125 @@
+---
+
+---
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const text = document.getElementById("loading-text");
+        const progressBar = document.getElementById("progress-bar");
+        const preloader = document.getElementById("preloader");
+
+        const steps = [0, 33, 54, 76, 100];
+        let index = 0;
+        let isLoaded = false; // Bandera para evitar conflictos
+
+        function updateLoader() {
+            if (isLoaded) return; // Si la página ya cargó, detener la animación
+
+            if (index < steps.length) {
+                text.innerText = `${steps[index]}%`;
+                progressBar.style.width = `${steps[index] / 3.25}%`;
+                index++;
+                setTimeout(updateLoader, 500);
+            }
+        }
+
+        updateLoader();
+
+        window.addEventListener("load", () => {
+            isLoaded = true; // Detenemos la animación
+            text.innerText = "100%";
+            progressBar.style.width = "30%";
+
+            setTimeout(() => {
+                preloader.style.opacity = "0";
+                setTimeout(() => preloader.style.display = "none", 500);
+            }, 500);
+        });
+    });
+</script>
+
+<section id="preloader">
+    <p id="loading-text">0%</p>
+    <div class="line"></div>
+    <div class="line load" id="progress-bar"></div>
+</section>
+
+    <style>
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    pointer-events: none;
+    cursor: default;
+    background: #090d19; /* Asegura el fondo negro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    transition: opacity 0.5s ease-out;
+
+}
+
+    #preloader p {
+        color: #acc6e8;
+        font-size: 10em;
+        text-align: center;
+        font-family: Baunk;
+    }
+
+    @font-face {
+	font-family: Baunk;
+	src: url(/fonts/Baunk.ttf);
+  }
+
+.line {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 4px;
+    background: #1a2340;
+    margin-top: 10px;
+        }
+
+.load {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 0%;
+    width: 0%;
+    height: 4px;
+    background: #acc6e8;
+    transition: width 0.5s ease-in-out;
+}
+
+/* #preloader .load {
+        width: 4em;
+        background: #acc6e8;
+        position: relative;
+        height: 2px;
+        width: 8em;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+
+    } */
+
+@media (max-width: 900px) {
+
+    #preloader p {
+        font-size: 3em;
+    }
+}
+		
+        
+</style>

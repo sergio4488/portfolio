@@ -1,0 +1,209 @@
+.toggle-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.6em;
+}
+
+.burger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.75em 2em 1.5em 2em;
+  background: #162a4300;
+  border-color: #acc6e8;
+  border-radius: 30%;
+  outline: none;
+  border: none;
+  height: 20px;
+  width: 28px;
+  transition: all 250ms ease-out;
+  cursor: pointer;
+}
+
+.burger:before,
+.burger:after {
+  content: "";
+  width: 40px;
+  height: 4px;
+  position: absolute;
+  background: #acc6e8;
+  transition: all 250ms ease-out;
+  will-change: transform;
+}
+
+.burger:before {
+  transform: translateY(-6px);
+}
+
+.burger:after {
+  transform: translateY(6px);
+}
+
+.active.burger:before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.active.burger:after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  /* background: #202930; */
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  will-change: transform;
+  z-index: 9800;
+}
+
+.overlay img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; /* O ajusta según necesites */
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay-menu {
+  position: fixed;
+  top: 3em;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  gap: clamp(0em, 1vw, 2em);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.menu-item {
+  display: flex;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.menu-item p {
+  position: relative;
+  text-align: center;
+  font-family: "Brutals";
+  font-size: 8em;
+  /* line-height: 80%; */
+  line-height: clamp(0%, 6vw, 80%);
+  will-change: transform;
+  transition: letter-spacing 0.3s;
+}
+
+.menu-item p#active {
+  pointer-events: none;
+  cursor: default;
+}
+
+.menu-item p:hover {
+  letter-spacing: 0.15em;
+}
+
+.menu-item p#active::after {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: #162a43;
+  width: var(--after-width, 0%);
+  opacity: 0.5;
+  height: 100px;
+}
+
+@font-face {
+  font-family: Baunk;
+  src: url(/fonts/Baunk.ttf);
+}
+
+
+.menu-item a {
+  color: #acc6e8;
+  text-decoration: none;
+  font-family: Baunk;
+  font-size: 6vw;
+
+}
+
+.menu-item p#active a{
+  color: #203f63;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
+}
+
+.sub-nav {
+  position: relative;
+  /* bottom: 5%;
+  left: 50%; */
+  width: 100%;
+  /* transform: translateX(-50%); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  opacity: 0;
+  z-index: 5;
+}
+
+.sub-nav p {
+  font-family: "Canopee";
+  font-size: 1.5vw;
+  font-weight: 800;
+  color: #84a3cb;
+  margin:0.5vw;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .logo-main img {
+    display: none;
+  }
+  .sub-nav {
+  display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .logo a {
+    font-size: 20px;
+  }
+  .overlay-menu {
+    top: -60px;
+    gap: 0em;
+}
+.menu-item p {  
+  font-size: 18vw;
+}
+.menu-item p#active::after {
+  opacity: 0;
+}
+.menu-item a {
+  font-size: 10vw;
+
+}
+}
+@media screen and (max-width: 800px) and (orientation: landscape) {
+  .logo a {
+    font-size: 20px;
+  }
+  .overlay-menu {
+    top: -6px;
+    gap: 0em;
+}
+.menu-item p {  
+  font-size: 5em;
+}
+}

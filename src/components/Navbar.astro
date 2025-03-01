@@ -1,0 +1,70 @@
+---
+import Redes_Sociales_Text from '../components/redes-sociales_texts.astro';
+---
+
+<div id="container">
+	<script>import { gsap } from "gsap" ; window.gsap = gsap;</script>
+
+	<link rel="stylesheet" href="/css/navBar.css">
+	<link rel="stylesheet" href="/css/burgerMenu.css">
+	<script type="module" src="/js/burgerMenu.js"></script>
+	<main>
+		<section id="navbar">
+			<!-- NAVBAR -->
+			<nav-bar>
+				<nav>
+					<div class="logo"><a href="#"><img src="/svg/four.svg"></img></a></div>
+					<!-- <div class="nombre"><a href="#">Sergio Santiago Fandiño</a></div>
+					<div class="logo"><a href="#"><img src="/svg/four.svg"></img></a></div> -->
+
+					<div class="right-side">
+					  <!-- <div class="nombre"><a href="#">Home</a></div>
+					  <div class="nombre"><a href="#">Projects</a></div>
+					  <div class="nombre"><a href="#">About</a></div>
+					  <div class="nombre"><a href="#">Contact</a></div> -->
+					  <div class="toggle-btn">
+						<button
+						  class="burger"
+						  onclick="this.classList.toggle('active');"
+						></button>
+					</div>
+					</div>
+				  </nav>
+				  <hamburguesa-menu>
+					<div class="overlay">
+						<div class="overlay-menu">
+							<div class="menu-item">
+							<div class="menu-item-name">
+								<p><a href="/index.html">HOME</a></p>
+							</div>
+							</div>
+							<div class="menu-item">
+							<div class="menu-item-name">
+								<p><a href="#">WORK</a></p>
+							</div>
+							</div>
+							<div class="menu-item">
+							<div class="menu-item-name">
+								<p><a href="#">ABOUT ME</a></p>
+							</div>
+							</div>
+							<div class="menu-item">
+								<div class="menu-item-name">
+									<p><a href="#">CONTACT</a></p>
+								</div>
+								</div>
+						<div class="sub-nav">
+							<Redes_Sociales_Text />
+						</div>
+						</div>
+						<img src="/webp/overlayBG.webp" alt="">
+					</div>
+				</hamburguesa-menu>
+			</nav-bar>
+
+		</section>
+	</main>
+</div>
+
+<style>
+</style>

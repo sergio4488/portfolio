@@ -1,0 +1,53 @@
+---
+
+---
+
+<div id="container">
+	<script type="module" src="/js/projects_hero.js"></script>
+	<link rel="stylesheet" href="/css/hero-section.css">
+	<script>import { gsap } from "gsap" ; window.gsap = gsap;</script>
+
+	<main>
+		<section id="hero">
+			<div class="slider-container">
+				<div class="slider"></div>
+				<div class="slider-content">
+					<div class="slide-title">
+						<!-- <div class="prefix"></div> -->
+						<div class="postfix"></div>
+					</div>
+				</div>
+				<div class="slider-indicator"></div>
+				<div class="link">
+					<div class="link-wrapper">
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 100 100">
+								<path
+							id="test"
+							d="M50, 10 A40, 40 0 1, 1 49.9999, 10"
+							stroke="#acc6e8"
+							stroke-width="0.75"
+							fill="none"
+							/>
+							</svg>
+							<div class="link-label">
+								<div class="line line-1"><p>View</p></div>
+								<div class="line line-2"><p>Project</p></div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+
+<style>
+video::-webkit-media-controls {
+	display: none !important;
+	opacity: 0; 
+}
+video::-webkit-media-controls-start-playback-button {
+	display: none !important;
+}
+</style>

@@ -1,0 +1,43 @@
+---
+import { REDES_SOCIALES } from "../const/redes_sociales_data.ts"
+---
+
+		<div class="redes-sociales">
+			{
+				REDES_SOCIALES.filter(({ id }) => id !== "infojobs").map(({ id, name, url }) => (
+						<div class="logoRedesSociales">
+						<a
+						title={`Logo de ${name}`}
+						href={url}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<p>{name}</p></a>
+					</div>
+				))
+			}
+		</div>
+<style>
+.redes-sociales{
+	display: flex;
+	flex-direction: row;
+	gap: 40px;
+}
+
+p {
+    color: white;
+    font-size: xx-large;
+}
+
+.logoRedesSociales {
+    margin: 0px 10px;
+
+    & img {
+        height: 18px;
+        max-width: 20px;
+    }
+	& a {
+		text-decoration: none;
+	}
+}
+</style>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 125.11" xml:space="preserve">
+  <defs>
+    <linearGradient id="myGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <!-- <stop offset="0%" stop-color="#eef2f3"/>
+      <stop offset="100%" stop-color="#8e9eab"/> -->
+            <stop offset="0%" stop-color="#090d19"/>
+      <stop offset="100%" stop-color="#090d19"/>
+    </linearGradient>
+  </defs>
+  <polygon points="0,69.43 546.98,124.89 375.27,70.34 777.49,84.88 723.16,68.94 961.35,87.23 1199.4,69.73 1145.95,84.75 
+	   1554.82,70.34 1382.57,125.11 1920,70.68 1920,0 0,0 " fill="url(#myGradient)"/>
+  <polygon points="961.54,122.02 941,94.58 961.54,96.56 981.14,95.13" fill="#acc6e8"/>
+  <polygon points="944.75,117.93 926.7,93.53 797,81.6" fill="#090d19"/>
+  <polygon points="976.83,119.09 995,94.58 1124.47,82.43" fill="#090d19"/>
+</svg>

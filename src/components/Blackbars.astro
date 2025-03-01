@@ -1,0 +1,68 @@
+---
+
+---
+
+
+		<section id="blackbars">
+			<div class="blackbars" id="top">
+				<!-- <img src="/svg/blackBar_top.svg" alt=""> -->
+                <img src="/webp/blackBar_top.png" alt="">
+			</div>
+			<!-- <div class="blackbars" id="bottom"></div> -->
+		</section>
+
+		<style>
+
+#blackbars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5.25em; /* Mantiene la altura de la barra */
+    z-index: 9999;
+    pointer-events: none;
+    background: #090d19; /* Asegura el fondo negro */
+}
+
+.blackbars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+/* Ajustes para la imagen SVG */
+.blackbars img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160em; /* Tamaño fijo */
+    height: auto; /* Mantiene proporciones */
+    max-width: none; /* Evita reducción en pantallas pequeñas */
+}
+
+
+.blackbars#top {
+top: 2.5em;
+}
+
+.blackbars#bottom {
+bottom: 0;
+}
+
+#top svg {
+
+}
+
+@media (max-width: 900px) {
+
+.blackbars {
+    /* display: none; */
+}
+}
+		</style>
