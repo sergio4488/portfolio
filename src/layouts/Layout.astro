@@ -5,10 +5,32 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" href="/css/reset.css">
 		<title>FourGFX</title>
 	</head>
 	<body>
+
 		<slot />
 	</body>
+	<style>
+	:global(html,
+	body) {
+		height: 100%;
+		/* overflow: hidden; */
+		font-family: "PP Rader";
+	}
+	:global(*) {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	}
+
+body {
+-webkit-font-smoothing: antialiased;
+}
+
+p {
+text-wrap: pretty;
+}
+	</style>
 </html>
+
